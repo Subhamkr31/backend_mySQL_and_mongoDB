@@ -1,0 +1,48 @@
+create data base===========================================
+
+CREATE DATABASE collage;
+
+-- create database if not exists collage;
+
+-- Drop database if exists company;
+
+USE collage;
+
+CREATE table student  (
+	id INT primary KEY,
+    name varchar (50),
+    age int not null
+    
+);
+
+insert into student values(1,"Subham",23);
+insert into student values(2,"riya",23);
+
+select * from student;
+
+show databases;
+
+show tables;
+
+
+create table base===========================================
+
+
+CREATE DATABASE collage;
+USE collage;
+ 
+ create table student (
+ rollno int primary key,
+ name varchar(50)
+);
+
+select * from student;
+
+insert into student
+(rollno,name)
+value
+(101,"subham"),
+(102,"ram"),
+(103,"sonam");
+
+insert into student value (104,"mohan");

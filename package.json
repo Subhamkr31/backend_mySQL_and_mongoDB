@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start": "npx nodemon app.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongodb": "^6.8.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.10.3"
+  }
+}
