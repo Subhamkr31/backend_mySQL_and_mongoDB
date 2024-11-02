@@ -3,7 +3,9 @@ const router = express.Router();
 const controller = require('../controllers/db.controller');
 
 const mysql = require('../controllers/mysql.controller');
-const mongodb = require("../controllers/mongo.controller")
+const mongodb = require("../controllers/mongo.controller");
+// const employee = require("../controllers/employee.controller");
+const companyController = require('../controllers/employee.controller');
 
 router.get('/hello', controller.hello);
 router.get('/query', controller.query);
@@ -21,10 +23,26 @@ router.post('/DropTable',mysql.DropTable);
 router.post('/UpdateQuery',mysql.UpdateQuery)
 router.post('/limitQuery',mysql.limitQuery)
 router.post('/CreateUserAndProduct',mysql.CreateUserAndProduct)
-router.post("/JoinQuery",mysql.JoinQuery);
-router.post("/LeftJoin",mysql.LeftJoin);
-router.post("/RightJoin",mysql.RightJoin)
+router.get("/JoinQuery",mysql.JoinQuery);
+router.get("/LeftJoin",mysql.LeftJoin);
+router.get("/RightJoin",mysql.RightJoin)
 
+// Employeee MySQL
+router.post("/createdatabase", companyController.createDataBase)
+router.post('/create-employee-table', companyController.createEmployeeTable);
+router.post('/drop-company-database', companyController.dropCompanyDatabase);
+router.post('/insert-employee-data', companyController.insertData);
+router.post('/update-hr-salaries', companyController.updateSalary);
+router.post('/delete-employee', companyController.deleteEmployee);
+router.post('/drop-employee-table', companyController.dropEmployeeTable);
+router.post('/count-it-employees', companyController.countITEmployees);
+router.post('/employees-starting-with-r', companyController.getEmployeesStartingWithR);
+router.post('/second-highest-salary', companyController.findSecondHighestSalary);
+router.post('/nth-highest-salary', companyController.findNthHighestSalary);
+router.post('/top-two-salaries', companyController.findTopTwoSalaries);
+router.post('/salary-summary', companyController.calculateTotalAndAverageSalary);
+router.post('/null-department', companyController.findRowsWithNullDepartment);
+router.post('/duplicate-departments', companyController.findDuplicateDepartments);
 
 
 // MONGODB
