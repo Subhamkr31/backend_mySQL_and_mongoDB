@@ -46,8 +46,9 @@ router.post('/duplicate-departments', companyController.findDuplicateDepartments
 
 
 // MONGODB
+router.post("/create",mongodb.createCollection)
 router.post("/customers",mongodb.createCustomer)
- 
+ router.post("/insertnewkey",mongodb.AddField)
 
 module.exports = router;
 
